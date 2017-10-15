@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Bluetooth"
+             x:Class="Bluetooth.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnStatus" Text="STATUS" Clicked="btnStatus_Clicked" />
+                <Button x:Name="btnScan" Text="SCAN" Clicked="btnScan_Clicked" />
+            </StackLayout>
+
+            <ListView x:Name="lv" ItemSelected="lv_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding NativeDevice.Id}" />
+                                <Label Text="{Binding NativeDevice.Name}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
