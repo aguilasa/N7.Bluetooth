@@ -13,7 +13,10 @@ namespace Bluetooth
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Bluetooth.MainPage());
+            MainPage = new NavigationPage(new Bluetooth.MainPage())
+            {
+                Title = "N7: Bluetooth Xamarin"
+            };
         }
 
         protected override void OnStart()

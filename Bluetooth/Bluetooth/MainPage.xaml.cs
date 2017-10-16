@@ -39,8 +39,7 @@ namespace Bluetooth
             deviceList.Clear();
 
             adapter.DeviceDiscovered += (s, a) =>
-            {
-                
+            {   
                 deviceList.Add(a.Device);
             };
 

@@ -6,20 +6,15 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnStatus" Text="STATUS" Clicked="btnStatus_Clicked" />
-                <Button x:Name="btnScan" Text="SCAN" Clicked="btnScan_Clicked" />
-            </StackLayout>
+            
+            <Button x:Name="btnStatus" Text="STATUS" Clicked="btnStatus_Clicked" />
+            <Button x:Name="btnScan" Text="SCAN" Clicked="btnScan_Clicked" />
+
 
             <ListView x:Name="lv" ItemSelected="lv_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding NativeDevice.Id}" />
-                                <Label Text="{Binding NativeDevice.Name}" />
-                            </StackLayout>
-                        </ViewCell>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Id, StringFormat = '{0}'}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
